@@ -1,5 +1,7 @@
 import os
 import time
+from dotenv import load_dotenv
+load_dotenv()
 from sqlalchemy.orm import Session
 from app.database import SessionLocal, engine
 from app import models, auth

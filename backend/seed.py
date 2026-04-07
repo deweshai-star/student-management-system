@@ -16,7 +16,8 @@ def wait_for_db():
         try:
             # this will throw if db is not ready
             db = SessionLocal()
-            db.execute("SELECT 1")
+            from sqlalchemy import text
+            db.execute(text("SELECT 1"))
             db.close()
             print("Database is ready!")
             return

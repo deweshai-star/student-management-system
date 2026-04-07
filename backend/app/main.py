@@ -24,9 +24,9 @@ async def db_not_connected_handler(request: Request, exc: OperationalError):
         content={"message": "Database is not connected. Please ensure the database server is running and the connection string is correct."},
     )
 
-app.include_router(auth_router.router)
-app.include_router(students_router.router)
-app.include_router(courses_router.router)
+app.include_router(auth_router.router, prefix="/api")
+app.include_router(students_router.router, prefix="/api")
+app.include_router(courses_router.router, prefix="/api")
 
 @app.get("/")
 def read_root():

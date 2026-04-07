@@ -8,14 +8,16 @@ A production-ready Student Management System built with React (Vite), Tailwind C
 - **Course Management**: Admins create courses, Teachers assign grades.
 - **Beautiful UI**: Modern, responsive dashboard using Tailwind and shadcn/ui.
 
-## Quick Start (Docker)
+## Quick Start (Without Docker / Windows PowerShell)
 
-1. Make sure you have Docker and Docker Compose installed.
-2. Run the following command in the root directory:
-   ```bash
-   docker-compose up --build
+Because the Neon Cloud Database is already seeded and active, you can launch the app locally using a single PowerShell command!
+
+1. Open PowerShell in the root directory of this project.
+2. Run the following command to instantly start both the Backend API and the React Frontend in their own windows:
+   ```powershell
+   Start-Process powershell -ArgumentList "-NoExit -Command `"cd backend; python -m uvicorn app.main:app --port 8000`""; Start-Process powershell -ArgumentList "-NoExit -Command `"cd frontend; npm run dev`""
    ```
-3. The database will be seeded automatically (Admin, Teacher, Students).
+3. Once the windows pop up and finish loading, navigate to **http://localhost:5173** in your browser to view the application!
 
 ## Access Points
 - **Frontend App**: [http://localhost:5173](http://localhost:5173)
